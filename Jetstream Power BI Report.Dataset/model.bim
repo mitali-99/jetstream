@@ -1,0 +1,2679 @@
+{
+  "compatibilityLevel": 1567,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"Example\",\"Example with numbers\",\"Fieldnames dataset\",\"Filters\",\"Date\",\"Query1\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.118.867.0 (23.06)"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "DynamicImprovement": "HighConfidence",
+            "Entities": {
+              "example_with_numbers.all_charges__from_total": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Example with numbers",
+                    "ConceptualProperty": "All charges % from total"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Other Charges%": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "example_with_numbers.total__after_deduct_all_charges": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Example with numbers",
+                    "ConceptualProperty": "Total payout  % after deduct all charges"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Remaining Total value %": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              }
+            },
+            "Language": "en-US",
+            "Version": "2.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "Query1",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "    Source = SharePoint.Files(\"https://systematixinfotech235.sharepoint.com/sites/powerbi_git\", [ApiVersion = 15]),",
+          "    #\"Power BI Holiday lodges example report (2) xlsx_https://systematixinfotech235 sharepoint com/sites/powerbi_git/Shared Documents/\" = Source{[Name=\"Power BI Holiday lodges example report (2).xlsx\",#\"Folder Path\"=\"https://systematixinfotech235.sharepoint.com/sites/powerbi_git/Shared Documents/\"]}[Content],",
+          "    #\"Imported Excel Workbook\" = Excel.Workbook(#\"Power BI Holiday lodges example report (2) xlsx_https://systematixinfotech235 sharepoint com/sites/powerbi_git/Shared Documents/\"),",
+          "    Filters_Sheet = #\"Imported Excel Workbook\"{[Item=\"Filters\",Kind=\"Sheet\"]}[Data]",
+          "in",
+          "    Filters_Sheet"
+        ],
+        "kind": "m",
+        "lineageTag": "0cb46b16-bdc1-418d-9bc3-97e08e372a50"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "f0733fdd-66ab-4641-8167-28c0b04a70d4",
+        "fromColumn": "Check-in Date",
+        "fromTable": "Example with numbers",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_b293e0b9-a3f2-4e9e-9cc1-90a087ae5114"
+      },
+      {
+        "name": "c8d8ae85-c1a5-4514-9301-8bd313f23753",
+        "fromColumn": "Check-out Date",
+        "fromTable": "Example with numbers",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_e1915f7a-c16c-4c49-964b-0ebf299eb6de"
+      },
+      {
+        "name": "f2944b74-0599-4613-8c6d-2e96e9f18b03",
+        "fromColumn": "Date",
+        "fromTable": "Date",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_c8750e46-0280-4a8f-a4d3-1884c0ec86fc"
+      }
+    ],
+    "sourceQueryCulture": "en-IN",
+    "tables": [
+      {
+        "name": "Date",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Calendar Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "0b7c2dd8-3649-423b-903e-5f5406ad633c",
+            "sourceColumn": "Calendar Year",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "bbf8c08c-d261-4fdb-b204-c9e523a22a24",
+            "sourceColumn": "Date",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Date Hierarchy",
+                  "table": "LocalDateTable_c8750e46-0280-4a8f-a4d3-1884c0ec86fc"
+                },
+                "isDefault": true,
+                "relationship": "f2944b74-0599-4613-8c6d-2e96e9f18b03"
+              }
+            ]
+          },
+          {
+            "name": "Day of Week Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "66ac7f41-ea9b-4558-8f95-488b654e1171",
+            "sourceColumn": "Day of Week Name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Day of Week Number",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "0d62bf5f-ca3e-46f0-a915-9e03d96a6cb7",
+            "sourceColumn": "Day of Week Number",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Month Initials",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3992ee68-f770-47e6-a132-6b66bf2fe095",
+            "sourceColumn": "Month Initials",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Month Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ac7fe530-9e06-46ec-b8b7-fbfde3247795",
+            "sourceColumn": "Month Name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Month Number",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "50e45ff9-6e50-43d3-990b-45052e0796e1",
+            "sourceColumn": "Month Number",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f69aef3e-73e7-4cc7-8770-22e2c9f64aa3",
+            "sourceColumn": "Quarter",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Quarter Number",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "8c799342-716b-420d-8b4a-f75df71544f4",
+            "sourceColumn": "Quarter Number",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "4024d094-48cf-4e16-aa39-c2fc3bec0158",
+        "measures": [
+          {
+            "name": "Proportion of Profit increase",
+            "expression": [
+              "var TotalRevenue = CALCULATE(SUM('Example with numbers'[Total]))",
+              "                                var GrossOperatingprofit = CALCULATE(SUM('Example with numbers'[Total Payout to Partner]))",
+              "",
+              "                             ",
+              "VAR Revenue_Current =",
+              "    MAX('Example with numbers'[Total])",
+              "var currentdate = CALCULATE(MAX('Example with numbers'[Check-out Date]))",
+              "",
+              "VAR RevenuePrevious =",
+              "    CALCULATE(MAX('Example with numbers'[Total]), 'Example with numbers'[Check-out Date] = EARLIER(max('Example with numbers'[Check-out Date])-1",
+              "VAR Profit_Current =",
+              "    MAX('Table'[Gross Operating Profit])",
+              "VAR Profit_Previous =",
+              "    CALCULATE(MAX('Table'[Gross Operating Profit]), 'Table'[Date] = EARLIER('Table'[Date]) - 1)",
+              "VAR Revenue_Increase =",
+              "    Revenue_Current - Revenue_Previous",
+              "VAR Profit_Increase =",
+              "    Profit_Current - Profit_Previous",
+              "RETURN",
+              "    DIVIDE(Profit_Increase, Revenue_Increase)",
+              "",
+              ""
+            ],
+            "lineageTag": "680e3943-b2a7-4ac3-b7c1-a454b45b0628"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Date-09acd9ec-916a-4b48-8324-5622f51829fa",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "",
+                "    // The column from which you want to build the date table               ",
+                "",
+                "    Dates          =",
+                "",
+                "        let",
+                "",
+                "            MinDate           = #date(2023,01,01),",
+                "",
+                "            MaxDate           = #date(2023,12,31),",
+                "",
+                "            StartDate         = #date ( Date.Year ( MinDate ),  1, 1 ),  // used -1 to get previous year                                                                   ",
+                "",
+                "            EndDate           = #date ( Date.Year ( MaxDate ) , 12, 31 ),  // used + 1 to get the next year                                                                ",
+                "",
+                "            StartDateAsNumber = Number.From ( StartDate ),",
+                "",
+                "            EndDateAsNumber   = Number.From ( EndDate ),",
+                "",
+                "            DateList          = { StartDateAsNumber .. EndDateAsNumber },",
+                "",
+                "            ToTable           = Table.FromList (",
+                "",
+                "                DateList,",
+                "",
+                "                Splitter.SplitByNothing(),",
+                "",
+                "                null,",
+                "",
+                "                null,",
+                "",
+                "                ExtraValues.Error",
+                "",
+                "            ),",
+                "",
+                "            RenameColumn      = Table.RenameColumns ( ToTable, { \"Column1\", \"Date\" } ),",
+                "",
+                "            ToDate            = Table.TransformColumnTypes ( RenameColumn, { \"Date\", type date } )",
+                "",
+                "        in",
+                "",
+                "            ToDate,",
+                "",
+                "    MonthName      = Table.AddColumn (",
+                "",
+                "        Dates,",
+                "",
+                "        \"Month Name\",",
+                "",
+                "        each Date.MonthName ( [Date] ),",
+                "",
+                "        type text",
+                "",
+                "    ),",
+                "",
+                "    MonthNumber    = Table.AddColumn (",
+                "",
+                "        MonthName,",
+                "",
+                "        \"Month Number\",",
+                "",
+                "        each Date.Month ( [Date] ),",
+                "",
+                "        Int64.Type",
+                "",
+                "    ),",
+                "",
+                "    CalendarYear   = Table.AddColumn (",
+                "",
+                "        MonthNumber,",
+                "",
+                "        \"Calendar Year\",",
+                "",
+                "        each Date.Year ( [Date] ),",
+                "",
+                "        Int64.Type",
+                "",
+                "    ),",
+                "",
+                "    DayName        = Table.AddColumn (",
+                "",
+                "        CalendarYear,",
+                "",
+                "        \"Day of Week Name\",",
+                "",
+                "        each Date.DayOfWeekName ( [Date] ),",
+                "",
+                "        type text",
+                "",
+                "    ),",
+                "",
+                "    DayNumber      = Table.AddColumn (",
+                "",
+                "        DayName,",
+                "",
+                "        \"Day of Week Number\",",
+                "",
+                "        each Date.Day ( [Date] ),",
+                "",
+                "        Int64.Type",
+                "",
+                "    ),",
+                "",
+                "    MonthShortName = Table.AddColumn (",
+                "",
+                "        DayNumber,",
+                "",
+                "        \"Month Initials\",",
+                "",
+                "        each Text.Start ( Date.MonthName ( [Date] ), 3 ),",
+                "",
+                "        type text",
+                "",
+                "    ),",
+                "",
+                "    QuarterName    = Table.AddColumn (",
+                "",
+                "        MonthShortName,",
+                "",
+                "        \"Quarter\",",
+                "",
+                "        each \"Q\" & Text.From ( Date.QuarterOfYear ( [Date] ) ),",
+                "",
+                "        type text",
+                "",
+                "    ),",
+                "",
+                "    QuarterNumber  = Table.AddColumn (",
+                "",
+                "        QuarterName,",
+                "",
+                "        \"Quarter Number\",",
+                "",
+                "        each Date.QuarterOfYear ( [Date] ),",
+                "",
+                "        Int64.Type",
+                "",
+                "    )",
+                "",
+                "in",
+                "",
+                "    QuarterNumber"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DateTableTemplate_4e21229d-9ef6-47f9-b387-295b173c2abb",
+        "annotations": [
+          {
+            "name": "__PBI_TemplateDateTable",
+            "value": "true"
+          },
+          {
+            "name": "DefaultItem",
+            "value": "DateHierarchy"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "fb32a9fc-d144-4543-a01d-ffcaf0560774",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "dff08ff9-5356-49a1-8ab7-ddf14ccead8e",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "6a9576ca-8f7e-4a08-944c-a106c646c177",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "611cfcb8-3eac-41eb-93c7-a50ed5803e86",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "4655b3ac-d989-4483-8a0d-e5039148dcd3",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "02771834-1a22-4137-a471-92540bd3b1da",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "9070c6a8-527b-4592-b295-d247f5bf22fb",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "3b52509c-56e3-4131-92ab-f75df866fd26",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "c1a19baf-e20a-4b01-99c9-3274f3e22c1d",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "95b22a54-1804-4b7f-999f-833d4841521d",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "7f815de9-7c79-4aee-a723-8fdca7c1661d",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "f561ecb3-7d48-4a18-a935-82e725a849a0"
+          }
+        ],
+        "isHidden": true,
+        "isPrivate": true,
+        "lineageTag": "7f97cad9-8624-4a45-82a2-67683c109e19",
+        "partitions": [
+          {
+            "name": "DateTableTemplate_4e21229d-9ef6-47f9-b387-295b173c2abb-19bf5f4a-6f03-46e2-b1c1-91e2a7ad4dc1",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(2015,1,1), Date(2015,1,1))",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Example",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Autohost",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e4d8362f-5251-429e-babc-ba15613d8d45",
+            "sourceColumn": "Autohost",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Booking ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e5660a28-7333-4127-882a-e60ecb56688f",
+            "sourceColumn": "Booking ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CC Fee",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "01b20768-f236-4a3e-9fb2-b7bcadc5ede4",
+            "sourceColumn": "CC Fee",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Channel",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4f556ab7-6da4-418b-b8d9-33fd2c0c0bc7",
+            "sourceColumn": "Channel",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Channel Fee",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d9a58f08-8832-4c6a-b03f-9c08422c5c34",
+            "sourceColumn": "Channel Fee",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Check-in Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "94f6df62-46ed-42d2-b4a7-2e1cfd71035f",
+            "sourceColumn": "Check-in Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Check-out Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2959a171-a187-48b7-a820-b7f6e96412c9",
+            "sourceColumn": "Check-out Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Cleaning / Extras",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "609f8b5f-c7c8-49d4-8f44-527368a2a22f",
+            "sourceColumn": "Cleaning / Extras",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Column20",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d51c830a-5df7-47f1-8387-644d6896b88d",
+            "sourceColumn": "Column20",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Column21",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f9963620-8efc-4c09-b95a-014f7b50db39",
+            "sourceColumn": "Column21",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Compensation",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7020a697-b894-4487-b6d8-7ed2d9871b5c",
+            "sourceColumn": "Compensation",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Guest Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3386a93d-58bf-4314-a0de-eecc78cd5393",
+            "sourceColumn": "Guest Name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Jetstream Fee",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d4f14ef3-2adf-438c-8ed8-72915f19fe2d",
+            "sourceColumn": "Jetstream Fee",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Nights",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c2f2444e-6c21-4ec2-a164-b722f4186dad",
+            "sourceColumn": "Nights",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Pre-Tax Total",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6c17c820-ed1c-4bcb-a19d-fc6c4c516f8c",
+            "sourceColumn": "Pre-Tax Total",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Property",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "16ede8e0-931b-41a7-8bff-770afbb597b1",
+            "sourceColumn": "Property",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Total",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "fd2c3022-48d7-42de-8c7e-5ba48e988402",
+            "sourceColumn": "Total",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Total Jetstream Fee",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "65c60dc4-57a3-45e3-9c33-ca56f8d73218",
+            "sourceColumn": "Total Jetstream Fee",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Total Payout",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0ef5f569-7238-4bbd-9037-a7a0b47cfefc",
+            "sourceColumn": "Total Payout",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "VAT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "a9027ba4-1d8b-429c-b288-7db30466229a",
+            "sourceColumn": "VAT",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "VAT on Jetstream Fee",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "37e4d7ba-6b0e-49fc-846a-1257b2c0ff4c",
+            "sourceColumn": "VAT on Jetstream Fee",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "c24bfc57-300b-4f5c-a184-3dd17a54aa97",
+        "partitions": [
+          {
+            "name": "Example-69fddde6-5386-4186-a068-f8984474ddd6",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = SharePoint.Files(\"https://systematixinfotech235.sharepoint.com/sites/powerbi_git\", [ApiVersion = 15]),",
+                "    #\"Power BI Holiday lodges example report (2) xlsx_https://systematixinfotech235 sharepoint com/sites/powerbi_git/Shared Documents/\" = Source{[Name=\"Power BI Holiday lodges example report (2).xlsx\",#\"Folder Path\"=\"https://systematixinfotech235.sharepoint.com/sites/powerbi_git/Shared Documents/\"]}[Content],",
+                "    #\"Imported Excel Workbook\" = Excel.Workbook(#\"Power BI Holiday lodges example report (2) xlsx_https://systematixinfotech235 sharepoint com/sites/powerbi_git/Shared Documents/\"),",
+                "    Example_Sheet = #\"Imported Excel Workbook\"{[Item=\"Example\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Example_Sheet, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Income Statement for Holiday Lodges\", type text}, {\"Column2\", type text}, {\"Column3\", type text}, {\"Column4\", type text}, {\"Column5\", type text}, {\"Column6\", type text}, {\"Column7\", type text}, {\"Column8\", type text}, {\"Column9\", type text}, {\"Column10\", type any}, {\"Column11\", type text}, {\"Column12\", type text}, {\"Column13\", type text}, {\"Column14\", type text}, {\"Column15\", type any}, {\"Column16\", type any}, {\"Column17\", type text}, {\"Column18\", type text}, {\"Column19\", type text}, {\"Column20\", type any}, {\"Column21\", type any}}),",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type\", each ([Income Statement for Holiday Lodges] = \"Booking ID\" or [Income Statement for Holiday Lodges] = \"From Cirrus\")),",
+                "    #\"Promoted Headers1\" = Table.PromoteHeaders(#\"Filtered Rows\", [PromoteAllScalars=true]),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Promoted Headers1\",{{\"Booking ID\", type text}, {\"Property\", type text}, {\"Check-in Date\", type text}, {\"Check-out Date\", type text}, {\"Nights\", type text}, {\"Guest Name\", type text}, {\"Channel\", type text}, {\"Cleaning / Extras\", type text}, {\"Pre-Tax Total\", type text}, {\"VAT\", type number}, {\"Total\", type text}, {\"Jetstream Fee\", type text}, {\"VAT on Jetstream Fee\", type text}, {\"Total Jetstream Fee\", type text}, {\"Channel Fee\", type any}, {\"CC Fee\", type any}, {\"Autohost\", type text}, {\"Compensation\", type text}, {\"Total Payout\", type text}, {\"Column20\", type any}, {\"Column21\", type any}})",
+                "in",
+                "    #\"Changed Type1\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Example with numbers",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Autohost",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "6afcaedf-e4f8-4a06-8654-1bd5d310b808",
+            "sourceColumn": "Autohost",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Booking ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d6f31c07-09e9-41a8-9246-39c4e98f5145",
+            "sourceColumn": "Booking ID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "Channel",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "095de6f9-41b7-4351-93e8-bce696985934",
+            "sourceColumn": "Channel",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Channel Fee",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-GB\"}"
+              }
+            ],
+            "dataType": "double",
+            "formatString": "\"£\"#,0.00;-\"£\"#,0.00;\"£\"#,0.00",
+            "lineageTag": "3361ca3c-d2d1-4c57-8275-cc888371820a",
+            "sourceColumn": "Channel Fee",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Check-in Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "d3be81de-36f7-4765-abe4-77484e04041c",
+            "sourceColumn": "Check-in Date",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Date Hierarchy",
+                  "table": "LocalDateTable_b293e0b9-a3f2-4e9e-9cc1-90a087ae5114"
+                },
+                "isDefault": true,
+                "relationship": "f0733fdd-66ab-4641-8167-28c0b04a70d4"
+              }
+            ]
+          },
+          {
+            "name": "Check-out Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "bd4e1756-fc4c-4733-86bb-f0c50a3ce19e",
+            "sourceColumn": "Check-out Date",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Date Hierarchy",
+                  "table": "LocalDateTable_e1915f7a-c16c-4c49-964b-0ebf299eb6de"
+                },
+                "isDefault": true,
+                "relationship": "c8d8ae85-c1a5-4514-9301-8bd313f23753"
+              }
+            ]
+          },
+          {
+            "name": "Cleaning / Extras",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9c86b454-0c37-4c10-a38a-526776be6408",
+            "sourceColumn": "Cleaning / Extras",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Cleaning / Extras - Copy",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-GB\"}"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "\"£\"#,0;-\"£\"#,0;\"£\"#,0",
+            "lineageTag": "212985d3-bc3c-4cca-9225-39f0899340ff",
+            "sourceColumn": "Cleaning / Extras - Copy",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Compensation",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a52ced86-6082-42f9-94a8-ba5d780e880e",
+            "sourceColumn": "Compensation",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Credit card Fee",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "3532387b-750b-4acc-9cad-e75daf1f3764",
+            "sourceColumn": "Credit card Fee",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "DAY('Example with numbers'[Check-out Date].[Date])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "3cf5113c-7cb9-4917-b86c-0940deb29db3",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Days Bw in/out night",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "DATEDIFF('Example with numbers'[Check-in Date],'Example with numbers'[Check-out Date],DAY)",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "43e83cc1-8108-4838-bbfd-1faca35ebb09",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Guest Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4e5e03fc-43e6-419b-9d59-03f95138088c",
+            "sourceColumn": "Guest Name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Index",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "fe39e1c5-f431-4da2-90bc-2f5344bb90df",
+            "sourceColumn": "Index",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Jetstream Fee",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e0e3a969-8945-46c3-abae-cd136be673b3",
+            "sourceColumn": "Jetstream Fee",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Month Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "FORMAT('Example with numbers'[Check-out Date],\"mmmm\")",
+            "isDataTypeInferred": true,
+            "lineageTag": "95ff2d37-eb12-4288-9899-a0e67940bd31",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "NewCleanExtraFees",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "CONCATENATE(\"£\", 'Example with numbers'[Cleaning / Extras - Copy]) ",
+              "/*  VALUE(REPLACE(CONCATENATE(\"£\", FORMAT('Example with numbers'[Cleaning / Extras - Copy], \"0\")), 1, 1, \"\")) */",
+              ""
+            ],
+            "lineageTag": "2e3332dc-ab6d-46a0-8e95-7937bde65b87",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Nights",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "4ef74415-e5f7-4a41-87e9-30ec19d21fe4",
+            "sourceColumn": "Nights",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Pre-Tax Total",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-GB\"}"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "\"£\"#,0;-\"£\"#,0;\"£\"#,0",
+            "lineageTag": "ca01f54d-7a34-4185-ba54-3cda12019766",
+            "sourceColumn": "Pre-Tax Total",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Profit Payment Increase",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d67347ec-9dda-44bb-babd-b8dd8bb84f63",
+            "sourceColumn": "Profit Payment Increase",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Property",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bef1c624-f591-4100-9379-2f8cf55ea47f",
+            "sourceColumn": "Property",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Proportion of profit/loss",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "expression": "DIVIDE('Example with numbers'[Total Increase],'Example with numbers'[Profit Payment Increase])",
+            "formatString": "0.00",
+            "isDataTypeInferred": true,
+            "lineageTag": "dd010486-cc7d-44fb-9650-0e101a4344a3",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Test",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "SUBSTITUTE('Example with numbers'[Cleaning / Extras - Copy],\"£\",\"\")",
+            "isDataTypeInferred": true,
+            "lineageTag": "c5daf749-1f4b-4d1c-af5a-ee21587f7624",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Total",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-GB\"}"
+              }
+            ],
+            "dataType": "double",
+            "formatString": "\"£\"#,0;-\"£\"#,0;\"£\"#,0",
+            "lineageTag": "1a0cbbc9-6624-43d0-8a3e-6bf4dc32fa58",
+            "sourceColumn": "Total",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Total Increase",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "b6d0ecd8-8e45-453e-8f1e-003ae9bda160",
+            "sourceColumn": "Total Increase",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Total Jetstream Fee",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e192f7e1-9586-47b2-bfbb-d7e66349c60f",
+            "sourceColumn": "Total Jetstream Fee",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Total Payout to Partner",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-GB\"}"
+              }
+            ],
+            "dataType": "double",
+            "formatString": "\"£\"#,0.00;-\"£\"#,0.00;\"£\"#,0.00",
+            "lineageTag": "fb24ccc6-f108-4fa8-9404-0149f068e9c3",
+            "sourceColumn": "Total Payout to Partner",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "VAT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ef9431bf-6b84-430f-ab3e-c3169a008d78",
+            "sourceColumn": "VAT",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "VAT on Jetstream Fee",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-GB\"}"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "\"£\"#,0;-\"£\"#,0;\"£\"#,0",
+            "lineageTag": "71d6c33c-a392-4038-9dab-d8d061dc4124",
+            "sourceColumn": "VAT on Jetstream Fee",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Week Of Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a4e0c79d-c25a-4040-8c4c-bcc160442d6a",
+            "sourceColumn": "Week Of Month",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "prv row partner",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "715724ea-00c5-4f65-a98c-0e877e1e7d31",
+            "sourceColumn": "prv row partner",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "prv row total",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-GB\"}"
+              }
+            ],
+            "dataType": "double",
+            "formatString": "\"£\"#,0.00;-\"£\"#,0.00;\"£\"#,0.00",
+            "lineageTag": "954e7a60-03f6-4d8f-b49e-9b9287440315",
+            "sourceColumn": "prv row total",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "81309f2c-0d1d-4e8a-a6c3-b809017c16bf",
+        "measures": [
+          {
+            "name": "Average Booking Value",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE(AVERAGE('Example with numbers'[Total]))",
+            "lineageTag": "e4796e99-6c70-4853-9e46-e27ab7d3d951"
+          },
+          {
+            "name": "Average Daily  Rate",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "/* DIVIDE(CALCULATE(SUM('Example with numbers'[Total])),CALCULATE(COUNT('Example with numbers'[Booking ID]))) */",
+              "             ",
+              "DIVIDE(",
+              "    CALCULATE(SUM('Example with numbers'[Total])),",
+              "    CALCULATE(",
+              "        SUM(",
+              "            'Example with numbers'[Days Bw in/out night])",
+              "        ",
+              "        )",
+              "    )",
+              "",
+              ""
+            ],
+            "lineageTag": "0b6bff57-87fa-4103-a1ef-feea2483acf9"
+          },
+          {
+            "name": "Channel Cost %",
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    SUM('Example with numbers'[Channel Fee]),",
+              "    SUM('Example with numbers'[Total])",
+              ") /* * 100 */",
+              ""
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "e9e96ff0-8402-4327-b0c0-20b1359331de"
+          },
+          {
+            "name": "Jetstream fees %",
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    SUM('Example with numbers'[Total Jetstream Fee]),",
+              "    SUM('Example with numbers'[Total]))"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "f0f1bf50-0d70-4194-b5bc-54d271e14e32"
+          },
+          {
+            "name": "Test _jetstreams%",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "DIVIDE(CALCULATE(SUM('Example with numbers'[Total])),",
+              "                      CALCULATE(SUM('Example with numbers'[Jetstream Fee]))",
+              "",
+              ")"
+            ],
+            "lineageTag": "e80360da-876b-4f6d-a148-24bc09010e44"
+          },
+          {
+            "name": "Cleaning Fees/Extras",
+            "expression": "CALCULATE(SUM('Example with numbers'[Cleaning / Extras]))",
+            "formatString": "0",
+            "lineageTag": "921006b9-734b-42e1-a50b-b94a1fdea478"
+          },
+          {
+            "name": "Total payout  % after deduct all charges",
+            "expression": [
+              "var a=CALCULATE(SUM('Example with numbers'[Total])-SUM('Example with numbers'[Total Jetstream Fee])-",
+              "                                           SUM('Example with numbers'[Channel Fee])-SUM('Example with numbers'[Credit card Fee])-                                             SUM('Example with numbers'[Autohost])-SUM('Example with numbers'[Compensation]))",
+              "                                           var b = CALCULATE(SUM('Example with numbers'[Total]))",
+              "",
+              "                                          ",
+              "                                        Return",
+              "                                        DIVIDE(a,b)",
+              "                                         "
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "dd16feb4-50df-46bc-bca6-32206737185e"
+          },
+          {
+            "name": "All charges % from total",
+            "expression": [
+              "var a=CALCULATE(SUM('Example with numbers'[Total])-SUM('Example with numbers'[Total Jetstream Fee])-",
+              "                                           SUM('Example with numbers'[Channel Fee])-SUM('Example with numbers'[Credit card Fee])-                                             SUM('Example with numbers'[Autohost])-SUM('Example with numbers'[Compensation]))",
+              "                                           var b = CALCULATE(SUM('Example with numbers'[Total]))",
+              "",
+              "                    var c = CALCULATE(SUM('Example with numbers'[Total Jetstream Fee])+SUM('Example with numbers'[Channel Fee])+            ",
+              "                          SUM('Example with numbers'[Credit card Fee])+SUM('Example with numbers'[Autohost])+SUM('Example with numbers'[Compensation]))",
+              "",
+              "                      var d = CALCULATE(SUM('Example with numbers'[Total]))   ",
+              "                      /* var d = IF(CALCULATE(SUM( 'Example with numbers'[Total])),CALCULATE(COUNTROWS('Example with numbers')  */          ",
+              "",
+              "                                          ",
+              "                                        Return",
+              "                                        DIVIDE(c,d) ",
+              "                                        "
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "bf51445a-b030-47d4-9a66-dcbb0008baf4"
+          },
+          {
+            "name": "Average length of stay",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "var a = CALCULATE(SUM('Example with numbers'[Days Bw in/out night]))",
+              "                         var b = COUNTROWS('Example with numbers')",
+              "                         return",
+              "                         DIVIDE(a,b)"
+            ],
+            "lineageTag": "76648bd3-5f4e-45d4-a09d-3859cba26ad5"
+          },
+          {
+            "name": "New Average Daily Rate",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "var a = CALCULATE(SUM('Example with numbers'[Days Bw in/out night]))",
+              "                     var b = CALCULATE(SUM('Example with numbers'[Total]))",
+              "                     return",
+              "                     DIVIDE(b,a)"
+            ],
+            "lineageTag": "d7846526-b606-4bc1-9ffb-630e9b85a1b1"
+          },
+          {
+            "name": "New Total % after deduct all charges",
+            "expression": [
+              "var a=CALCULATE(SUM('Example with numbers'[Total]))",
+              "                                       ",
+              "                                      var b = CALCULATE(SUM('Example with numbers'[Total Jetstream Fee])+",
+              "                                           SUM('Example with numbers'[Channel Fee])+SUM('Example with numbers'[Credit card Fee])+ SUM('Example with numbers'[Autohost])+SUM('Example with numbers'[Compensation]))",
+              "                                           var c = CALCULATE(SUM('Example with numbers'[Total]))",
+              "",
+              "                                          ",
+              "                                        Return",
+              "                                       DIVIDE(a-b,a)"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "8db53b4c-a0c1-4109-8ba6-941d6797e903"
+          },
+          {
+            "name": "Cost per occupied room",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "var a = CALCULATE(SUM('Example with numbers'[Total Jetstream Fee])+",
+              "                                           SUM('Example with numbers'[Channel Fee])+SUM('Example with numbers'[Credit card Fee])+ SUM('Example with numbers'[Autohost])+SUM('Example with numbers'[Compensation]))",
+              "",
+              "",
+              "                                           var b = CALCULATE(SUM('Example with numbers'[Days Bw in/out night]))",
+              "                                           return",
+              "                                           DIVIDE(a,b)"
+            ],
+            "lineageTag": "27a9cbd0-2dce-4adb-b2ae-1a0fae4fa65b"
+          },
+          {
+            "name": "Repeat Guest Rate",
+            "expression": [
+              "var a = CALCULATE(DISTINCTCOUNT('Example with numbers'[Guest Name]))",
+              "                     var b = CALCULATE(DISTINCTCOUNT('Example with numbers'[Guest Name]),FILTER('Example with numbers',CALCULATE(COUNTROWS('Example with numbers'),ALLEXCEPT('Example with numbers','Example with numbers'[Guest Name]))>1))",
+              "                         ",
+              "                         return ",
+              "                         DIVIDE(b,a)"
+            ],
+            "formatString": "#,0.00",
+            "lineageTag": "2edd64cc-76a6-4e12-bb8d-2557daf08846"
+          },
+          {
+            "name": "Repeat Channel Rate",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "var a = CALCULATE(DISTINCTCOUNT('Example with numbers'[Channel]))",
+              "                     var b = CALCULATE(DISTINCTCOUNT('Example with numbers'[Channel]),FILTER('Example with numbers',CALCULATE(COUNTROWS('Example with numbers'),ALLEXCEPT('Example with numbers','Example with numbers'[Channel]))>1))",
+              "                         ",
+              "                         return ",
+              "                       /*  DIVIDE(b,a) */  b"
+            ],
+            "lineageTag": "afc394e4-e153-4597-be10-38395543cade"
+          },
+          {
+            "name": "Measure",
+            "annotations": [
+              {
+                "name": "43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c",
+                "value": "True"
+              }
+            ],
+            "lineageTag": "e061ca90-6408-498c-9c42-2b526fc97870"
+          },
+          {
+            "name": "Credit card fees %",
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    SUM('Example with numbers'[Credit card Fee]),",
+              "    SUM('Example with numbers'[Total]))"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "375cbfde-05f1-40d5-9063-02664c4f59e8"
+          },
+          {
+            "name": "Autohost  %",
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    SUM('Example with numbers'[Autohost]),",
+              "    SUM('Example with numbers'[Total]))"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "44c884fd-2ab0-4ca9-8a97-27785e5248f4"
+          },
+          {
+            "name": "Compensation  %",
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    SUM('Example with numbers'[Compensation]),",
+              "    SUM('Example with numbers'[Total]))"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "7468d72c-cf98-4aaf-8b85-5149e5b8d3d4"
+          },
+          {
+            "name": "net payment after channel & jetstream fees",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-GB\"}"
+              }
+            ],
+            "expression": [
+              "var a =CALCULATE(SUM('Example with numbers'[Total]))",
+              "                                             var b = CALCULATE(SUM('Example with numbers'[Total Jetstream Fee])+SUM('Example with numbers'[Channel Fee]))",
+              "                                             return ",
+              "                                             a-b"
+            ],
+            "formatString": "\"£\"#,0.00;-\"£\"#,0.00;\"£\"#,0.00",
+            "lineageTag": "16ec2eb7-c94a-4406-990e-8849f46624ba"
+          },
+          {
+            "name": "Test_All charges % from total",
+            "expression": [
+              "var a=CALCULATE(SUM('Example with numbers'[Total])-SUM('Example with numbers'[Total Jetstream Fee])-",
+              "                                           SUM('Example with numbers'[Channel Fee])-SUM('Example with numbers'[Credit card Fee])-                                             SUM('Example with numbers'[Autohost])-SUM('Example with numbers'[Compensation]))",
+              "                                           var b = CALCULATE(SUM('Example with numbers'[Total]))",
+              "",
+              "                    var c = CALCULATE(SUM('Example with numbers'[Total Jetstream Fee])+SUM('Example with numbers'[Channel Fee])+            ",
+              "                          SUM('Example with numbers'[Credit card Fee])+SUM('Example with numbers'[Autohost])+SUM('Example with numbers'[Compensation]))",
+              "",
+              "                      var d = CALCULATE(SUM('Example with numbers'[Total]))   ",
+              "                       var f = IF(CALCULATE(SUM( 'Example with numbers'[Total])),CALCULATE(COUNTROWS('Example with numbers')       ))",
+              "                            var e = CALCULATE(SUM('Example with numbers'[Channel Fee])+SUM('Example with numbers'[Total Jetstream Fee])+SUM('Example with numbers'[Credit card Fee])+SUM('Example with numbers'[Autohost])+SUM('Example with numbers'[Compensation])+SUM('Example with numbers'[Cleaning / Extras - Copy]))",
+              "                            var g = IF(CALCULATE(COUNTROWS('Example with numbers'),'Example with numbers'[Channel]>1,ALLEXCEPT('Example with numbers','Example with numbers'[Channel])),CALCULATE(SUM('Example with numbers'[Total])-SUM('Example with numbers'[Total Jetstream Fee])))",
+              "                            ",
+              "",
+              "                                          ",
+              "                                        Return",
+              "                                       /*  DIVIDE(c,d)  */DIVIDE(e,d)"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "80423ce7-9b08-4e06-b672-15eab1d1361e"
+          },
+          {
+            "name": "Revenue per available customer",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-GB\"}"
+              }
+            ],
+            "expression": [
+              "var a = CALCULATE(SUM('Example with numbers'[Total]))",
+              "                                 var b = CALCULATE(DISTINCTCOUNT('Example with numbers'[Guest Name]))",
+              "                                 return",
+              "                                 DIVIDE(a,b)",
+              ""
+            ],
+            "formatString": "\"£\"#,0;-\"£\"#,0;\"£\"#,0",
+            "lineageTag": "22a39ca1-3402-48c2-9c52-833eb11db9a3"
+          },
+          {
+            "name": "Average Revenue Per night",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-GB\"}"
+              }
+            ],
+            "expression": [
+              "var a = CALCULATE(SUM('Example with numbers'[Total]))",
+              "                            var b = CALCULATE(SUM('Example with numbers'[Nights]))",
+              "                            return",
+              "                            DIVIDE(a,b)"
+            ],
+            "formatString": "\"£\"#,0;-\"£\"#,0;\"£\"#,0",
+            "lineageTag": "7d01212b-4651-4b99-936f-e3f5a0a6f3fd"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Example with numbers-1ad49b77-fe97-4b76-902b-3faf72194f72",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "      Source = SharePoint.Files(\"https://systematixinfotech235.sharepoint.com/sites/powerbi_git\", [ApiVersion = 15]),",
+                "    #\"Power BI Holiday lodges example report (2) xlsx_https://systematixinfotech235 sharepoint com/sites/powerbi_git/Shared Documents/\" = Source{[Name=\"Power BI Holiday lodges example report (2).xlsx\",#\"Folder Path\"=\"https://systematixinfotech235.sharepoint.com/sites/powerbi_git/Shared Documents/\"]}[Content],",
+                "    #\"Imported Excel Workbook\" = Excel.Workbook(#\"Power BI Holiday lodges example report (2) xlsx_https://systematixinfotech235 sharepoint com/sites/powerbi_git/Shared Documents/\"),",
+                "    #\"Example with numbers_Sheet\" = #\"Imported Excel Workbook\"{[Item=\"Example with numbers\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(#\"Example with numbers_Sheet\", [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Income Statement for Holiday Lodges\", type any}, {\"Column2\", type text}, {\"Column3\", type any}, {\"Column4\", type any}, {\"Column5\", type any}, {\"Column6\", type text}, {\"Column7\", type text}, {\"Column8\", type text}, {\"Column9\", type any}, {\"Column10\", type any}, {\"Column11\", type any}, {\"Column12\", type any}, {\"Column13\", type any}, {\"Column14\", type any}, {\"Column15\", type any}, {\"Column16\", type any}, {\"Column17\", type any}, {\"Column18\", type any}, {\"Column19\", type any}, {\"Column20\", type any}, {\"Column21\", type any}, {\"Column22\", type any}, {\"Column23\", type any}, {\"Column24\", type any}, {\"Column25\", type any}, {\"Column26\", type any}, {\"Column27\", type any}}),",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type\", each ([Income Statement for Holiday Lodges] <> null and [Income Statement for Holiday Lodges] <> \"Booking Details\" and [Income Statement for Holiday Lodges] <> \"Holiday Lodges Address and VAT Number\")),",
+                "    #\"Promoted Headers1\" = Table.PromoteHeaders(#\"Filtered Rows\", [PromoteAllScalars=true]),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Promoted Headers1\",{{\"Booking ID\", Int64.Type}, {\"Property\", type text}, {\"Check-in Date\", type date}, {\"Check-out Date\", type date}, {\"Nights\", Int64.Type}, {\"Guest Name\", type text}, {\"Channel\", type text}, {\"Cleaning / Extras\", type text}, {\"Pre-Tax Total\", Int64.Type}, {\"VAT\", Int64.Type}, {\"Total\", Int64.Type}, {\"Jetstream Fee\", Int64.Type}, {\"VAT on Jetstream Fee\", Int64.Type}, {\"Total Jetstream Fee\", Int64.Type}, {\"Channel Fee\", type number}, {\"Credit card Fee\", type number}, {\"Autohost\", type number}, {\"Compensation\", Int64.Type}, {\"Total Payout to Partner\", type number}, {\"Column20\", type any}, {\"Column21\", type any}, {\"Column22\", type any}, {\"Column23\", type any}, {\"Column24\", type any}, {\"Column25\", type any}, {\"Column26\", type any}, {\"Column27\", type any}}),",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type1\",{\"Booking ID\", \"Property\", \"Check-in Date\", \"Check-out Date\", \"Nights\", \"Guest Name\", \"Channel\", \"Cleaning / Extras\", \"Pre-Tax Total\", \"VAT\", \"Total\", \"Jetstream Fee\", \"VAT on Jetstream Fee\", \"Total Jetstream Fee\", \"Channel Fee\", \"Credit card Fee\", \"Autohost\", \"Compensation\", \"Total Payout to Partner\"}),",
+                "    #\"Added Custom\" = Table.AddColumn(#\"Removed Other Columns\", \"Week Of Month\", each Date.WeekOfMonth([#\"Check-out Date\"])),",
+                "    #\"Duplicated Column\" = Table.DuplicateColumn(#\"Added Custom\", \"Cleaning / Extras\", \"Cleaning / Extras - Copy\"),",
+                "    #\"Replaced Value\" = Table.ReplaceValue(#\"Duplicated Column\",\"£100\",\"100\",Replacer.ReplaceText,{\"Cleaning / Extras - Copy\"}),",
+                "    #\"Changed Type2\" = Table.TransformColumnTypes(#\"Replaced Value\",{{\"Cleaning / Extras - Copy\", Int64.Type}}),",
+                "    #\"Added Index\" = Table.AddIndexColumn(#\"Changed Type2\", \"Index\", 0, 1, Int64.Type),",
+                "    #\"Added Custom1\" = Table.AddColumn(#\"Added Index\", \"prv row total\", each try #\"Added Index\"{[Index]-1}[Total] otherwise null),",
+                "    #\"Added Custom2\" = Table.AddColumn(#\"Added Custom1\", \"Total Increase\", each [Total]-[prv row total]),",
+                "    #\"Added Custom3\" = Table.AddColumn(#\"Added Custom2\", \"prv row partner\", each try #\"Added Index\"{[Index]-1}[Total Payout to Partner] otherwise null),",
+                "    #\"Changed Type3\" = Table.TransformColumnTypes(#\"Added Custom3\",{{\"Total Increase\", Int64.Type}, {\"prv row partner\", Int64.Type}, {\"prv row total\", Int64.Type}}),",
+                "    #\"Added Custom4\" = Table.AddColumn(#\"Changed Type3\", \"Profit Payment Increase\", each [Total Payout to Partner]-[prv row partner]),",
+                "    #\"Changed Type4\" = Table.TransformColumnTypes(#\"Added Custom4\",{{\"Profit Payment Increase\", Int64.Type}, {\"prv row partner\", type number}, {\"Total Increase\", type number}, {\"prv row total\", type number}, {\"Total\", type number}})",
+                "in",
+                "    #\"Changed Type4\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Fieldnames dataset",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Column1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c04881d1-5b9b-4d3f-bd35-d6d1bb524c11",
+            "sourceColumn": "Column1",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Column2",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "38f7480e-8f5b-4b79-bcb8-219431557f36",
+            "sourceColumn": "Column2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Column3",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e6fb2293-c32a-4ca6-a46e-19f080d3dd58",
+            "sourceColumn": "Column3",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "08d33d14-10e4-44a7-b30f-bbff8930f04d",
+        "partitions": [
+          {
+            "name": "Fieldnames dataset-3fc027c2-6d01-48e2-b104-af5be31093bd",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = SharePoint.Files(\"https://systematixinfotech235.sharepoint.com/sites/powerbi_git\", [ApiVersion = 15]),",
+                "    #\"Power BI Holiday lodges example report (2) xlsx_https://systematixinfotech235 sharepoint com/sites/powerbi_git/Shared Documents/\" = Source{[Name=\"Power BI Holiday lodges example report (2).xlsx\",#\"Folder Path\"=\"https://systematixinfotech235.sharepoint.com/sites/powerbi_git/Shared Documents/\"]}[Content],",
+                "    #\"Imported Excel Workbook\" = Excel.Workbook(#\"Power BI Holiday lodges example report (2) xlsx_https://systematixinfotech235 sharepoint com/sites/powerbi_git/Shared Documents/\"),",
+                "    #\"Fieldnames dataset_Sheet\" = #\"Imported Excel Workbook\"{[Item=\"Fieldnames dataset\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Fieldnames dataset_Sheet\",{{\"Column1\", type text}, {\"Column2\", type text}, {\"Column3\", type text}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Filters",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Column1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6547931b-c7d2-4057-83b6-739cc97d053f",
+            "sourceColumn": "Column1",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Column2",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "450b8667-4697-40f7-9b86-6400550cfea2",
+            "sourceColumn": "Column2",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "a0adc986-a9f3-4b91-bed0-d8d24770ec76",
+        "partitions": [
+          {
+            "name": "Filters-94f241c1-39ed-4068-b7e5-e38124987e7c",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "     Source = SharePoint.Files(\"https://systematixinfotech235.sharepoint.com/sites/powerbi_git\", [ApiVersion = 15]),",
+                "    #\"Power BI Holiday lodges example report (2) xlsx_https://systematixinfotech235 sharepoint com/sites/powerbi_git/Shared Documents/\" = Source{[Name=\"Power BI Holiday lodges example report (2).xlsx\",#\"Folder Path\"=\"https://systematixinfotech235.sharepoint.com/sites/powerbi_git/Shared Documents/\"]}[Content],",
+                "    #\"Imported Excel Workbook\" = Excel.Workbook(#\"Power BI Holiday lodges example report (2) xlsx_https://systematixinfotech235 sharepoint com/sites/powerbi_git/Shared Documents/\"),",
+                "    Filters_Sheet = #\"Imported Excel Workbook\"{[Item=\"Filters\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(Filters_Sheet,{{\"Column1\", type text}, {\"Column2\", type text}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "LocalDateTable_b293e0b9-a3f2-4e9e-9cc1-90a087ae5114",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "d9acb3a6-108b-440a-a950-a75ed689bc00",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "37aa2543-6aa9-49f1-b3ee-a17ec256b5d3",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "a72becaf-dd16-490b-a525-dcd92737e3aa",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "298db935-8517-40e7-96a8-798e3b727d96",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "444c4786-d848-4028-a929-f674f03d3045",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "2725620b-b8c8-4ab5-90d6-816983200a0c",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "e0729503-1e72-4914-8237-91a18463f206",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "9cbf7da5-231b-439d-b164-ae12ee3a1a8e",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "3c8479a4-a234-4383-bad8-bfabe2967290",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "c3552c96-d4ba-4e18-9f94-0137547e6179",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "b0036bd7-1b4d-43ac-a114-a6b4fa773101",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "1e2cfc59-f50a-4eae-ad7b-c8fe443d7af3"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "77fff847-efd0-4ee2-a76b-35e402789b72",
+        "partitions": [
+          {
+            "name": "LocalDateTable_b293e0b9-a3f2-4e9e-9cc1-90a087ae5114-f64484b8-33d3-4231-8e81-546002c05b77",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('Example with numbers'[Check-in Date])), 1, 1), Date(Year(MAX('Example with numbers'[Check-in Date])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      },
+      {
+        "name": "LocalDateTable_c8750e46-0280-4a8f-a4d3-1884c0ec86fc",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "d3f423f3-bd03-4679-8a10-b67f1b7836ab",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "cda38b56-1473-4f49-a9e8-3db417208ab3",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "ea7e4c27-893f-4f04-b757-23c57b49343f",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "84352447-6ba9-46d3-88d9-1e55b817d170",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "d82c785a-decf-4d1f-93e7-6a4af082b1e3",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "31690c8e-e510-4a99-989f-95e447163a47",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "1f06ba69-aff3-4e7a-a2e2-f165b4c4b7ae",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "d7cae3c1-43c3-4645-b94b-ed2b0d481648",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "9be84721-1ca6-4227-b8a5-403f3ce70d25",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "b7a93223-0991-4224-ab48-859d30e13681",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "55a1e55a-4d2e-4690-8d98-544dd2e5e08b",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "70dd6ca8-da1c-4854-81c0-927db05a4b6c"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "ed6c10f9-dac0-42af-a543-fadf305e4d9d",
+        "partitions": [
+          {
+            "name": "LocalDateTable_c8750e46-0280-4a8f-a4d3-1884c0ec86fc-fed5218f-3cb8-4e48-9de5-3e7fcdbfef49",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('Date'[Date])), 1, 1), Date(Year(MAX('Date'[Date])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      },
+      {
+        "name": "LocalDateTable_e1915f7a-c16c-4c49-964b-0ebf299eb6de",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "22e3e0e4-6464-4458-a79b-3dee1c053e77",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "b7d24448-2d45-4d96-9f4b-3d953ba21274",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "a9d314fe-2cd1-4260-ae7c-94569b74f2c5",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "90087806-d992-4a2f-96b4-bc243b661911",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "e1bb4708-7618-494e-ae3e-d5fd45477822",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "d1a69910-8996-4c8b-bc13-162f7a5c213d",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "31c992da-4e6a-47a3-994e-370a296ebf3a",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "c28edf00-ff8c-4439-aed7-aa9da9ff86c3",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "c22c065d-1b64-4d9e-ae0e-fa43cfdfd803",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "c3dfc3f5-6484-4e32-b9ca-2eba46065f1b",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "c700429d-fbfa-4c50-aaed-94dc9f09ad04",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "c8f9a04e-169f-4e57-9d14-6d24fc25ba52"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "04c291a4-c247-4fd7-ac3c-abe1527137d1",
+        "partitions": [
+          {
+            "name": "LocalDateTable_e1915f7a-c16c-4c49-964b-0ebf299eb6de-25baeef7-9246-4cc6-97a5-c4923dd32371",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('Example with numbers'[Check-out Date])), 1, 1), Date(Year(MAX('Example with numbers'[Check-out Date])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      }
+    ]
+  }
+}
