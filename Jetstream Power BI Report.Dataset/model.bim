@@ -977,6 +977,19 @@
           }
         ],
         "lineageTag": "c24bfc57-300b-4f5c-a184-3dd17a54aa97",
+        "measures": [
+          {
+            "name": "Average Booking Value 2",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE(AVERAGE('Example with numbers'[Total]))",
+            "lineageTag": "8c008d24-86f8-48b4-834a-6c4ada8ecfb0"
+          }
+        ],
         "partitions": [
           {
             "name": "Example-69fddde6-5386-4186-a068-f8984474ddd6",
