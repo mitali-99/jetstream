@@ -96,12 +96,12 @@
           }
         ],
         "expression": [
-          "let",
-          "    Source = SharePoint.Files(\"https://systematixinfotech235.sharepoint.com/sites/powerbi_git\", [ApiVersion = 15]),",
-          "    #\"Power BI Holiday lodges example report (2) xlsx_https://systematixinfotech235 sharepoint com/sites/powerbi_git/Shared Documents/\" = Source{[Name=\"Power BI Holiday lodges example report (2).xlsx\",#\"Folder Path\"=\"https://systematixinfotech235.sharepoint.com/sites/powerbi_git/Shared Documents/\"]}[Content],",
-          "    #\"Imported Excel Workbook\" = Excel.Workbook(#\"Power BI Holiday lodges example report (2) xlsx_https://systematixinfotech235 sharepoint com/sites/powerbi_git/Shared Documents/\"),",
-          "    Filters_Sheet = #\"Imported Excel Workbook\"{[Item=\"Filters\",Kind=\"Sheet\"]}[Data]",
-          "in",
+          "let\r",
+          "    Source = SharePoint.Files(\"https://systematixinfotech235.sharepoint.com/sites/powerbi_git\", [ApiVersion = 15]),\r",
+          "    #\"Power BI Holiday lodges example report (2) xlsx_https://systematixinfotech235 sharepoint com/sites/powerbi_git/Shared Documents/\" = Source{[Name=\"Power BI Holiday lodges example report (2).xlsx\",#\"Folder Path\"=\"https://systematixinfotech235.sharepoint.com/sites/powerbi_git/Shared Documents/\"]}[Content],\r",
+          "    #\"Imported Excel Workbook\" = Excel.Workbook(#\"Power BI Holiday lodges example report (2) xlsx_https://systematixinfotech235 sharepoint com/sites/powerbi_git/Shared Documents/\"),\r",
+          "    Filters_Sheet = #\"Imported Excel Workbook\"{[Item=\"Filters\",Kind=\"Sheet\"]}[Data]\r",
+          "in\r",
           "    Filters_Sheet"
         ],
         "kind": "m",
@@ -139,10 +139,6 @@
       {
         "name": "Date",
         "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
           {
             "name": "PBI_ResultType",
             "value": "Table"
@@ -316,6 +312,17 @@
               ""
             ],
             "lineageTag": "680e3943-b2a7-4ac3-b7c1-a454b45b0628"
+          },
+          {
+            "name": "Duplicate",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE(SUM('Example with numbers'[Autohost]))",
+            "lineageTag": "96422f89-f62d-4ce7-ad8a-a0cde0129565"
           }
         ],
         "partitions": [
@@ -689,10 +696,6 @@
         "name": "Example",
         "annotations": [
           {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
             "name": "PBI_ResultType",
             "value": "Table"
           }
@@ -1017,10 +1020,6 @@
       {
         "name": "Example with numbers",
         "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
           {
             "name": "PBI_ResultType",
             "value": "Table"
@@ -1932,10 +1931,6 @@
         "name": "Fieldnames dataset",
         "annotations": [
           {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
             "name": "PBI_ResultType",
             "value": "Table"
           }
@@ -2005,10 +2000,6 @@
       {
         "name": "Filters",
         "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
           {
             "name": "PBI_ResultType",
             "value": "Table"
