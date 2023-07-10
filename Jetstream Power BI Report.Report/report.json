@@ -282,13 +282,13 @@
           "z": 2000.00
         },
         {
-          "config": "{\"name\":\"f17bad04d9e741b2c63d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":507.192118226601,\"y\":233.20197044334975,\"z\":10001,\"width\":198.6206896551724,\"height\":115.27093596059113,\"tabOrder\":10001}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Example with numbers.Autohost  2 %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Example with numbers\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"Autohost  2 %\"},\"Name\":\"Example with numbers.Autohost  2 %\",\"NativeReferenceName\":\"Autohost  2 %\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"Autohost  2 %\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "config": "{\"name\":\"f17bad04d9e741b2c63d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":507.192118226601,\"y\":233.20197044334975,\"z\":11000,\"width\":198.6206896551724,\"height\":115.27093596059113,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Example with numbers.Autohost  2 %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Example with numbers\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"Autohost  2 %\"},\"Name\":\"Example with numbers.Autohost  2 %\",\"NativeReferenceName\":\"Autohost  2 %\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"Autohost  2 %\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
           "filters": "[]",
           "height": 115.27,
           "width": 198.62,
           "x": 507.19,
           "y": 233.20,
-          "z": 10001.00
+          "z": 11000.00
         },
         {
           "config": "{\"name\":\"f6cd16584f3bb6ae89e4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":1280.1951219512196,\"height\":78.14634146341464,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}],\"fill\":[{\"properties\":{\"fillColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E45D71'\"}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"30D\"}}}},\"selector\":{\"id\":\"default\"}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
