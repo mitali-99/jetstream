@@ -237,6 +237,15 @@
           "z": 3000.00
         },
         {
+          "config": "{\"name\":\"6c58fc76efb47a06a260\",\"layouts\":[{\"id\":0,\"position\":{\"x\":518.7192118226601,\"y\":308.57142857142856,\"z\":11001,\"width\":148.07881773399015,\"height\":102.85714285714286,\"tabOrder\":11001}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Example with numbers.Autohost  % 3\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Example with numbers\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"Autohost  % 3\"},\"Name\":\"Example with numbers.Autohost  % 3\",\"NativeReferenceName\":\"Autohost  % 3\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"Autohost  % 3\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 102.86,
+          "width": 148.08,
+          "x": 518.72,
+          "y": 308.57,
+          "z": 11001.00
+        },
+        {
           "config": "{\"name\":\"9a6e87e4c1f7795c3d3f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":633.9901477832512,\"y\":301.4778325123153,\"z\":7000,\"width\":631.3300492610838,\"height\":217.24137931034483,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Example with numbers.Channel\",\"active\":true}],\"Y\":[{\"queryRef\":\"Example with numbers.Average length of stay\"},{\"queryRef\":\"Example with numbers.Average Daily  Rate\"},{\"queryRef\":\"Example with numbers.Cost per occupied room\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Example with numbers\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"Channel\"},\"Name\":\"Example with numbers.Channel\",\"NativeReferenceName\":\"Channel\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"Average length of stay\"},\"Name\":\"Example with numbers.Average length of stay\",\"NativeReferenceName\":\"Average length of stay\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"Average Daily  Rate\"},\"Name\":\"Example with numbers.Average Daily  Rate\",\"NativeReferenceName\":\"Average Daily  Rate\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"Cost per occupied room\"},\"Name\":\"Example with numbers.Cost per occupied room\",\"NativeReferenceName\":\"Cost per occupied room\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"Average length of stay\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}}}}],\"valueAxis\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"end\":{\"expr\":{\"Literal\":{\"Value\":\"300D\"}}},\"start\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E45D71'\"}}}}}},\"selector\":{\"metadata\":\"Example with numbers.Average length of stay\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":7,\"Percent\":0.6}}}}}},\"selector\":{\"metadata\":\"Example with numbers.Average Daily  Rate\"}}],\"categoryAxis\":[{\"properties\":{\"innerPadding\":{\"expr\":{\"Literal\":{\"Value\":\"14L\"}}},\"preferredCategoryWidth\":{\"expr\":{\"Literal\":{\"Value\":\"20D\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
           "filters": "[]",
           "height": 217.24,
@@ -282,12 +291,12 @@
           "z": 2000.00
         },
         {
-          "config": "{\"name\":\"f17bad04d9e741b2c63d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":507.192118226601,\"y\":233.20197044334975,\"z\":11000,\"width\":198.6206896551724,\"height\":115.27093596059113,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Example with numbers.Autohost  2 %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Example with numbers\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"Autohost  2 %\"},\"Name\":\"Example with numbers.Autohost  2 %\",\"NativeReferenceName\":\"Autohost  2 %\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"Autohost  2 %\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "config": "{\"name\":\"f17bad04d9e741b2c63d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":496.55172413793105,\"y\":175.56650246305418,\"z\":11000,\"width\":198.6206896551724,\"height\":115.27093596059113,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Example with numbers.Autohost  2 %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Example with numbers\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"Autohost  2 %\"},\"Name\":\"Example with numbers.Autohost  2 %\",\"NativeReferenceName\":\"Autohost  2 %\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"Autohost  2 %\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
           "filters": "[]",
           "height": 115.27,
           "width": 198.62,
-          "x": 507.19,
-          "y": 233.20,
+          "x": 496.55,
+          "y": 175.57,
           "z": 11000.00
         },
         {

@@ -1894,6 +1894,22 @@
               "    SUM('Example with numbers'[Total]))"
             ],
             "lineageTag": "fa891da3-3453-4762-ac3a-cf7d0054fab8"
+          },
+          {
+            "name": "Autohost  % 3",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    SUM('Example with numbers'[Autohost]),",
+              "    SUM('Example with numbers'[Total]))"
+            ],
+            "lineageTag": "610b8f1c-5c37-4dfa-a53e-b6884a822b70"
           }
         ],
         "partitions": [
