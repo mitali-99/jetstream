@@ -273,15 +273,6 @@
           "z": 1000.00
         },
         {
-          "config": "{\"name\":\"e89ef0a053558453ebcf\",\"layouts\":[{\"id\":0,\"position\":{\"x\":615.3694581280788,\"y\":219.9014778325123,\"z\":10001,\"width\":275.76354679802955,\"height\":201.2807881773399,\"tabOrder\":10001}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Date.Duplicate\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Duplicate\"},\"Name\":\"Date.Duplicate\",\"NativeReferenceName\":\"Duplicate\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Duplicate\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
-          "filters": "[]",
-          "height": 201.28,
-          "width": 275.76,
-          "x": 615.37,
-          "y": 219.90,
-          "z": 10001.00
-        },
-        {
           "config": "{\"name\":\"eca7fbcbb4ab3ffbcf21\",\"layouts\":[{\"id\":0,\"position\":{\"x\":352.0975609756098,\"y\":6.146341463414634,\"z\":2000,\"width\":629.5609756097562,\"height\":61.463414634146346,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Income Statement for Holiday Lodges\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"24pt\",\"color\":\"#ffffff\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[]",
           "height": 61.46,
