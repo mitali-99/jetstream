@@ -633,7 +633,7 @@
       "width": 1280.00
     },
     {
-      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"201L\"}}}}}]}}",
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"201L\"}}}}}]},\"visibility\":1}",
       "displayName": "Duplicate of Financial Report",
       "displayOption": 1,
       "filters": "[]",
